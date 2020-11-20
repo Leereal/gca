@@ -127,7 +127,7 @@
 
         window.onload = function () {
             // Set the date we're counting down to
-            var countDownDate = new Date("Nov 20, 2020 09:00:00").getTime();
+            var countDownDate = new Date(nextAuction()).getTime();
 
             // Update the count down every 1 second
             var x = setInterval(function() {
@@ -145,13 +145,13 @@
             var seconds = Math.floor((distance % (1000 * 60)) / 1000);
                 
             // Output the result in an element with id="demo"
-            document.getElementById("countdown").innerHTML = "NEXT AUCTION COMING IN :" + days + "days " + hours + "hr "
+            document.getElementById("countdown").innerHTML = "NEXT AUCTION COMING IN :" + hours + "hr "
             + minutes + "mins " + seconds + "sec ";
                 
             // If the count down is over, write some text 
             if (distance < 0) {
                 clearInterval(x);
-                document.getElementById("countdown").innerHTML = "EXPIRED";
+                document.getElementById("countdown").innerHTML = "AUCTIONS CLOSED";
             }
             }, 1000);
         };
