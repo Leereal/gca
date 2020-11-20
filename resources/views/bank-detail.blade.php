@@ -29,7 +29,7 @@
             <table class="table">
               <thead>
                 <tr>          
-                  <th>AVATAR</th>
+                  {{-- <th>AVATAR</th> --}}
                   <th>BANK NAME</th>
                   <th>ACCOUNT NUMBER</th>
                   <th>BRANCH</th>
@@ -41,7 +41,7 @@
               <tbody>
                 @foreach($bank_details as $bank_detail)
                 <tr>
-                  <td>{{$bank_detail->bank->avatar}}</td>
+                  {{-- <td>{{$bank_detail->bank->avatar}}</td> --}}
                   <td>{{$bank_detail->bank->name}}</td>
                   <td>{{$bank_detail->account_number}}</td>
                   <td>{{$bank_detail->branch}}</td>
