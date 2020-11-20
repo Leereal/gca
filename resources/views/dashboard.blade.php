@@ -3,7 +3,7 @@
         <div class="col-md-12">
             <div class="col-md-6">
                 <div class="input-group">
-                    <input type="text" id="reflink" value="{{Request::root().'/'.Auth::user()->username}}" class="form-control">
+                    <input type="text" id="reflink" value="{{Request::root().'/register/'.Auth::user()->username}}" class="form-control">
                     <span class="input-group-btn">
                       <button class="btn btn-default" onclick="copyLink()" type="button">COPY</button>
                     </span>
