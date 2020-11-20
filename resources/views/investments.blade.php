@@ -17,7 +17,7 @@
                   <th>PLAN</th>
                   <th>MATURITY DATE</th>
                   <th>BANK</th>
-                  <th>STATUS</th>
+                  {{-- <th>STATUS</th> --}}
                 </thead>
                 <tbody> 
                   @foreach($investments as $investment) 
@@ -27,7 +27,7 @@
                     <td>{{$investment->plan->name}}</td>
                     <td>{{$investment->due_date}}</td>
                     <td>{{$investment->bank->name}}</td>
-                    <td>{{$investment->status}}</td>              
+                    {{-- <td>{{$investment->status}}</td>               --}}
                   </tr>
                   @endforeach   
                 </tbody>

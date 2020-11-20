@@ -1,4 +1,18 @@
 <x-app-layout>
+    @if(session()->has('message'))
+        <div class="alert alert-success text-center">
+            {{ session()->get('message') }}
+        </div>
+    @endif
+    @if (isset($errors) && count($errors) > 0)
+        <div class="alert alert-danger text-center">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     @if(!$is_open)
     <div class="row">
         <div class="col-md-12">                   
@@ -25,144 +39,42 @@
             </div>
         </div>
     </div>
-    @else    
-    <div class="row">
+    @else        
+    <div class="row">        
+        @foreach($auctions as $auction)
         <div class="col-lg-3 col-md-4 col-sm-6">         
             <div class="card card-pricing card-raised">
                 <div class="card-body">
-                    <h6 class="card-category">FNB (SOUTH AFRICA)</h6>
-                    <div class="fileinput fileinput-new text-center" data-provides="fileinput">
-                        <div class="fileinput-new thumbnail img-circle">
-                            <img src="../../images/stanbic.png" alt="...">
-                        </div>                      
-                    </div>
-                    <h3 class="card-title">R250.37</h3>
-                    <div class="form-group">    
-                        <input type="text" class="form-control" name="amount" placeholder="Amount" id="amount">
-                    </div>
-                    <a href="#pablo" class="btn btn-rose btn-round">BID</a>
-                </div>
-            </div>       
-        </div>   
-        <div class="col-lg-3 col-md-4 col-sm-6">         
-            <div class="card card-pricing card-raised">
-                <div class="card-body">
-                    <h6 class="card-category">FNB (SOUTH AFRICA)</h6>
-                    <div class="fileinput fileinput-new text-center" data-provides="fileinput">
-                        <div class="fileinput-new thumbnail img-circle">
-                            <img src="../../images/stanbic.png" alt="...">
-                        </div>                      
-                    </div>
-                    <h3 class="card-title">R250.37</h3>
-                    <div class="form-group">    
-                        <input type="text" class="form-control" name="amount" placeholder="Amount" id="amount">
-                    </div>
-                    <a href="#pablo" class="btn btn-rose btn-round">BID</a>
-                </div>
-            </div>       
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">         
-            <div class="card card-pricing card-raised">
-                <div class="card-body">
-                    <h6 class="card-category">FNB (SOUTH AFRICA)</h6>
-                    <div class="fileinput fileinput-new text-center" data-provides="fileinput">
-                        <div class="fileinput-new thumbnail img-circle">
-                            <img src="../../images/stanbic.png" alt="...">
-                        </div>                      
-                    </div>
-                    <h3 class="card-title">R250.37</h3>
-                    <div class="form-group">    
-                        <input type="text" class="form-control" name="amount" placeholder="Amount" id="amount">
-                    </div>
-                    <a href="#pablo" class="btn btn-rose btn-round">BID</a>
+                    <form action="/bids" method="POST" >
+                        {{ csrf_field() }}
+                        <input type="hidden" name="auction" value="{{$auction->id}}">
+                        <input type="hidden" name="balance" value="{{$auction->balance}}">
+                        <h6 class="card-category">{{$auction->bank_detail->bank->name}}</h6>
+                        <div class="fileinput fileinput-new text-center" data-provides="fileinput">
+                            <div class="fileinput-new thumbnail img-circle">
+                                <img src="../../images/stanbic.png" alt="...">
+                            </div>                      
+                        </div>
+                        <h3 class="card-title">R{{$auction->balance}}</h3>
+                        @foreach($plans as $plan)
+                        <div class="form-check">
+                            <label class="form-check-label">
+                              <input class="form-check-input" type="radio" name="plan" value="{{$plan->id}}">{{$plan->name}} | {{$plan->interest}}%
+                              <span class="circle">
+                                <span class="check"></span>
+                              </span>
+                            </label>
+                        </div>
+                        @endforeach
+                        <div class="form-group">    
+                            <input type="text" class="form-control" name="amount" placeholder="Amount" id="amount">
+                        </div>
+                        <button type="submit" class="btn btn-rose btn-round">BID</button>
+                    </form>
                 </div>
             </div>       
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">         
-            <div class="card card-pricing card-raised">
-                <div class="card-body">
-                    <h6 class="card-category">FNB (SOUTH AFRICA)</h6>
-                    <div class="fileinput fileinput-new text-center" data-provides="fileinput">
-                        <div class="fileinput-new thumbnail img-circle">
-                            <img src="../../images/stanbic.png" alt="...">
-                        </div>                      
-                    </div>
-                    <h3 class="card-title">R250.37</h3>
-                    <div class="form-group">    
-                        <input type="text" class="form-control" name="amount" placeholder="Amount" id="amount">
-                    </div>
-                    <a href="#pablo" class="btn btn-rose btn-round">BID</a>
-                </div>
-            </div>       
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">         
-            <div class="card card-pricing card-raised">
-                <div class="card-body">
-                    <h6 class="card-category">FNB (SOUTH AFRICA)</h6>
-                    <div class="fileinput fileinput-new text-center" data-provides="fileinput">
-                        <div class="fileinput-new thumbnail img-circle">
-                            <img src="../../images/stanbic.png" alt="...">
-                        </div>                      
-                    </div>
-                    <h3 class="card-title">R250.37</h3>
-                    <div class="form-group">    
-                        <input type="text" class="form-control" name="amount" placeholder="Amount" id="amount">
-                    </div>
-                    <a href="#pablo" class="btn btn-rose btn-round">BID</a>
-                </div>
-            </div>       
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">         
-            <div class="card card-pricing card-raised">
-                <div class="card-body">
-                    <h6 class="card-category">FNB (SOUTH AFRICA)</h6>
-                    <div class="fileinput fileinput-new text-center" data-provides="fileinput">
-                        <div class="fileinput-new thumbnail img-circle">
-                            <img src="../../images/stanbic.png" alt="...">
-                        </div>                      
-                    </div>
-                    <h3 class="card-title">R250.37</h3>
-                    <div class="form-group">    
-                        <input type="text" class="form-control" name="amount" placeholder="Amount" id="amount">
-                    </div>
-                    <a href="#pablo" class="btn btn-rose btn-round">BID</a>
-                </div>
-            </div>       
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">         
-            <div class="card card-pricing card-raised">
-                <div class="card-body">
-                    <h6 class="card-category">FNB (SOUTH AFRICA)</h6>
-                    <div class="fileinput fileinput-new text-center" data-provides="fileinput">
-                        <div class="fileinput-new thumbnail img-circle">
-                            <img src="../../images/stanbic.png" alt="...">
-                        </div>                      
-                    </div>
-                    <h3 class="card-title">R250.37</h3>
-                    <div class="form-group">    
-                        <input type="text" class="form-control" name="amount" placeholder="Amount" id="amount">
-                    </div>
-                    <a href="#pablo" class="btn btn-rose btn-round">BID</a>
-                </div>
-            </div>       
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6">         
-            <div class="card card-pricing card-raised">
-                <div class="card-body">
-                    <h6 class="card-category">FNB (SOUTH AFRICA)</h6>
-                    <div class="fileinput fileinput-new text-center" data-provides="fileinput">
-                        <div class="fileinput-new thumbnail img-circle">
-                            <img src="../../images/stanbic.png" alt="...">
-                        </div>                      
-                    </div>
-                    <h3 class="card-title">R250.37</h3>
-                    <div class="form-group">    
-                        <input type="text" class="form-control" name="amount" placeholder="Amount" id="amount">
-                    </div>
-                    <a href="#pablo" class="btn btn-rose btn-round">BID</a>
-                </div>
-            </div>       
-        </div>     
+        @endforeach
     </div>
     @endif
     <script>

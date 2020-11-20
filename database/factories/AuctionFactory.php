@@ -23,7 +23,7 @@ class AuctionFactory extends Factory {
         return [
             'amount' => $this->faker->randomFloat( 2, 10, 3000 ),
             'balance' => $this->faker->randomFloat( 2, 15, 3000 ),       
-            'bank_id' => mt_rand( 1, 7 ),
+            'bank_detail_id' => mt_rand( 1, 7 ),
             'investment_id' => mt_rand( 1, 10 ),
             'user_id' => mt_rand( 1, 20 ),
             'comment' =>$this->faker->text(),

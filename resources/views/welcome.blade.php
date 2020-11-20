@@ -6,8 +6,16 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <title>E-COINCE</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+     <!--  Social tags      -->
+     <meta name="keywords" content="Online Auction, ECoince, E-coince, Make Money Online, Bid Auction, Hyip, Investment, Invest, Bitcoin">
+     <meta name="description" content="E-COINCE is an online peer to peer platform in which members buy and sell their virtual currency called COINS , 1 COIN is equivalent to 1ZAR.">
+     <!-- Twitter Card data -->
+     <meta name="twitter:card" content="investment">
+     <meta name="twitter:site" content="@ecoince">
+     <meta name="twitter:title" content="ECoince">
+     <meta name="twitter:description" content="E-COINCE is an online peer to peer platform in which members buy and sell their virtual currency called COINS , 1 COIN is equivalent to 1ZAR.">
+     <meta name="twitter:creator" content="e-coince">
+     <meta name="twitter:image" content="https:e-coince.com">
 
     <!-- Favicons -->
     <link href="{{asset('favicon.png')}}" rel="icon">
@@ -97,8 +105,8 @@
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0">
                         <p>
-                            A peer-to-peer programme is one where the members of a platform circulate funds to one another without a central place where the funds are deposited. This is a crowd funding platform. Users exchange monies in order to assist each other. You may also view
-                            it as an online stokvel (South African word for crowd funding)
+                            A peer-to-peer programme is one where the members of a platform circulate funds to one another without a central place where the funds are deposited. Users exchange monies in order to assist each other. You may also view
+                            it as an online stokvel.
                         </p>
                         <a href="#" class="btn-learn-more">Register Now</a>
                     </div>
@@ -135,7 +143,7 @@
                                 </li>
 
                                 <li>
-                                    <a data-toggle="collapse" href="#accordion-list-2" class="collapsed"><span>02</span> Do i have enough time to pay my bid? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                                    <a data-toggle="collapse" href="#accordion-list-2" class="collapsed"><span>02</span> Do I have enough time to pay my bid? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                                     <div id="accordion-list-2" class="collapse" data-parent=".accordion-list">
                                         <p>
                                             Yes, you have upto 12 hours to pay your bid failure to do so you will be blocked and all your coins cancelled. Only immediate payments are allowed when making payments.
@@ -144,7 +152,7 @@
                                 </li>
 
                                 <li>
-                                    <a data-toggle="collapse" href="#accordion-list-3" class="collapsed"><span>03</span> What do i get if i refer someone to the platform? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                                    <a data-toggle="collapse" href="#accordion-list-3" class="collapsed"><span>03</span> What do I get if I refer someone to the platform? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                                     <div id="accordion-list-3" class="collapse" data-parent=".accordion-list">
                                         <p>
                                             If you refer someone to the platform using your referral link you get 10% of every bid they pay. You are encouraged to refer and earn bonuses.

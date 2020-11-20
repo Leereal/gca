@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Auction;
+use App\Models\Plan;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -20,8 +21,9 @@ class AuctionController extends Controller
         $is_open = Setting::find(1)->value('auction_status');
         if($is_open){            
             $auctions = Auction::where('status',1)->get();
+            $plans = Plan::all();
         }
-        return view('auction',['auctions'=>$auctions,'is_open'=>$is_open]);       
+        return view('auction',['auctions'=>$auctions,'is_open'=>$is_open,'plans'=>$plans]);       
     }
 
     /**

@@ -60,7 +60,7 @@
                           <th>AMOUNT</th>
                           <th>BANK</th>
                           <th>PLAN</th>
-                          <th>STATUS</th>
+                          {{-- <th>STATUS</th> --}}
                         </thead>
                         <tbody>                          
                           @foreach($bids as $bid) 
@@ -69,7 +69,7 @@
                             <td>{{$bid->amount}}</td>
                             <td>{{$bid->bank->name}}</td>
                             <td>{{$bid->plan->name}}</td>
-                            <td>{{$bid->status}}</td>             
+                            {{-- <td>{{$bid->status}}</td>              --}}
                           </tr>
                           @endforeach  
                         </tbody>
@@ -81,7 +81,7 @@
                           <th>DATE</th>
                           <th>AMOUNT</th>
                           <th>INVESTMENT</th>
-                          <th>STATUS</th>          
+                          {{-- <th>STATUS</th>           --}}
                         </thead>
                         <tbody>  
                           @foreach($bonuses as $bonus) 
@@ -89,7 +89,7 @@
                             <td>{{$bonus->created_at}}</td> 
                             <td>{{$bonus->amount}}</td>
                             <td>{{$bonus->investment->amount}}</td>
-                            <td>{{$bonus->status}}</td>             
+                            {{-- <td>{{$bonus->status}}</td>              --}}
                           </tr>
                           @endforeach  
                         </tbody>
@@ -102,7 +102,7 @@
                       <th>AMOUNT</th>
                       <th>PAYMENT METHOD</th>
                       <th>INVESTMENT AMOUNT</th>
-                      <th>STATUS</th>          
+                      {{-- <th>STATUS</th>           --}}
                     </thead>
                     <tbody>  
                       @foreach($auctions as $auction) 
@@ -111,7 +111,7 @@
                         <td>{{$auction->amount}}</td>
                         <td>{{$auction->bank->name}}</td>
                         <td>{{$auction->investment->amount}}</td>
-                        <td>{{$auction->status}}</td>             
+                        {{-- <td>{{$auction->status}}</td>              --}}
                       </tr>
                       @endforeach  
                     </tbody>

@@ -16,12 +16,17 @@ class DashboardController extends Controller
         $total_referrals        = $user->referrals()->get()->count();
         $total_bonus            = $user->bonuses()->where('bonuses.status', '>', 0)->get()->sum('amount');
 
+        //Get bids which needs approval
+        $payments = $user->pending_payments()->whereIn('bids.status',[101,2])->get();
+
+
         return view('dashboard',[
             'is_open'=>$is_open,
             'balance' => number_format($total_balance, 2),
             'mature'  => number_format($total_mature, 2),           
             'referrals'  =>$total_referrals,           
             'bonus'  => number_format($total_bonus, 2),
+            'payments' =>$payments
             ]);  
     }
 }

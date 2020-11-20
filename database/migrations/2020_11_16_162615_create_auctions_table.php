@@ -17,7 +17,7 @@ class CreateAuctionsTable extends Migration
             $table->id();
             $table->decimal('amount');
             $table->decimal('balance');  
-            $table->unsignedBigInteger('bank_id');
+            $table->unsignedBigInteger('bank_detail_id');
             $table->unsignedBigInteger('investment_id');
             $table->unsignedBigInteger('user_id');
             $table->text('comment')->nullable();            
@@ -27,7 +27,7 @@ class CreateAuctionsTable extends Migration
             $table->softDeletes();   
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');            
-            $table->foreign('bank_id')->references('id')->on('banks')->onDelete('cascade');
+            $table->foreign('bank_detail_id')->references('id')->on('bank_details')->onDelete('cascade');
             $table->foreign('investment_id')->references('id')->on('investments')->onDelete('cascade');
            
         });

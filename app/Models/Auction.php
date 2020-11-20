@@ -37,8 +37,8 @@ class Auction extends Model
     /**
      * Get the bank for this auction.
      */
-    public function bank()
+    public function bank_detail()
     {
-        return $this->belongsTo('App\Models\Bank');
+        return $this->belongsTo('App\Models\BankDetail');
     }
 }

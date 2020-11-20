@@ -57,5 +57,7 @@ Route::group(['middleware' => 'auth'], function() {
 ]);
 });
 
+Route::post('/make-payment', [BidsController::class, 'make_payment'])->middleware(['auth']);
+Route::post('/approve', [BidsController::class, 'approve'])->middleware(['auth']);
 
 

@@ -1,38 +1,61 @@
 <x-app-layout>
-  <div class="row">
-    <div class="col-md-12">
-      <div class="card">
-        <div class="card-header card-header-rose card-header-icon">
-          <div class="card-icon">
-            <i class="material-icons">assignment</i>
-          </div>         
-          <h4 class="card-title">Bids</h4>          
+  @if(session()->has('message'))
+        <div class="alert alert-success text-center">
+            {{ session()->get('message') }}
         </div>
-        <div class="card-body">
-          <div class="table-responsive">
-            <table class="table">
-                <thead class="">
-                  <th>DATE</th>
-                  <th>AMOUNT</th>
-                  <th>BANK</th>
-                  <th>PLAN</th>
-                  <th>STATUS</th>
-                </thead>
-                <tbody>                          
-                  @foreach($bids as $bid) 
-                  <tr>
-                    <td>{{$bid->created_at}}</td> 
-                    <td>{{$bid->amount}}</td>
-                    <td>{{$bid->bank->name}}</td>
-                    <td>{{$bid->plan->name}}</td>
-                    <td>{{$bid->status}}</td>             
-                  </tr>
-                  @endforeach  
-                </tbody>
-            </table>  
-          </div>
+    @endif
+    @if (isset($errors) && count($errors) > 0)
+        <div class="alert alert-danger text-center">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
         </div>
+    @endif
+    @if($bids->isEmpty())
+      <div class="alert alert-success alert-with-icon" data-notify="container">
+          <i class="material-icons" data-notify="icon">notifications</i>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <i class="material-icons">close</i>
+          </button>
+          <span data-notify="icon" class="now-ui-icons ui-1_bell-53"></span>
+          <span data-notify="message">No bids to pay</span>
       </div>
-    </div>
+    @endif
+  <div class="row">
+    @foreach($bids as $bid)
+      <div class="col-lg-4 col-md-4 col-sm-12">         
+          <div class="card card-pricing card-raised">
+              <div class="card-body">
+                  <form action="/make-payment" method="POST" enctype="multipart/form-data">
+                      {{ csrf_field() }}  
+                  <input type="hidden" name="bid" value="{{$bid->id}}">                    
+                      <h3 class="card-title">R{{$bid->amount}}</h3>                    
+                      <ul>
+                        <li>{{$bid->auction->bank_detail->bank->name}}</li>
+                        <li>{{$bid->auction->bank_detail->account_number}}</li>
+                        <li>{{$bid->auction->bank_detail->account_holder}}</li>
+                        <li>{{$bid->auction->bank_detail->account_type}}</li>
+                      </ul> 
+                      <div class="fileinput fileinput-new text-center" data-provides="fileinput">
+                        <div class="fileinput-new thumbnail">
+                          <img src="../../assets/img/image_placeholder.jpg" alt="...">
+                        </div>
+                        <div class="fileinput-preview fileinput-exists thumbnail"></div>
+                        <div>
+                          <span class="btn btn-rose btn-sm btn-round btn-file">
+                            <span class="fileinput-new">UPLOAD POP</span>
+                            <span class="fileinput-exists">Change</span>
+                            <input type="file" name="pop" />
+                          </span>
+                          <a href="#pablo" class="btn btn-danger btn-sm btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> Remove</a>
+                        </div>
+                      <button type="submit" class="btn btn-success btn-round"><i class="material-icons">add_task</i> COMPLETE PAYMENT</button>
+                  </form>
+              </div>
+          </div>       
+      </div>
+      @endforeach
   </div>
 </x-app-layout>

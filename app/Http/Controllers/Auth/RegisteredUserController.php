@@ -37,7 +37,7 @@ class RegisteredUserController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|confirmed|min:8',
             'cellphone' => 'required|string|min:10|max:13',
-            'ref' => 'string|max:30',
+            'ref' => 'string|max:30|nullable',
         ]);
 
         $referrer = 1;

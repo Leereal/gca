@@ -10,6 +10,8 @@ class Bids extends Model
 {
     use HasFactory, SoftDeletes;
 
+    protected $guarded =[];
+
     /**
      * Get the auction for this bid.
      */

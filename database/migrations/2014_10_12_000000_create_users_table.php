@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('cellphone');
             $table->string('role')->default("Member");
-            $table->unsignedBigInteger('referrer_id')->nullable();  
+            $table->unsignedBigInteger('referrer_id')->default(1);  
             $table->ipAddress('ipaddress');
             $table->rememberToken();
             $table->timestamps();

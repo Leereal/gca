@@ -8,15 +8,50 @@
                       <button class="btn btn-default" onclick="copyLink()" type="button">COPY</button>
                     </span>
                 </div><!-- /input-group -->   
-            </div>      
+            </div>
+            @if(!$payments->isEmpty())
+            <div class="col-lg-6 col-md-12">
+                <div class="card">
+                  <div class="card-header card-header-text card-header-success">
+                    <div class="card-text">
+                      <h4 class="card-title">Received Payments</h4>
+                      <p class="card-category">Please approve only if you received payment.</p>
+                    </div>
+                  </div>
+                  <div class="card-body table-responsive">
+                    <table class="table table-hover">                      
+                      <tbody>
+                        @foreach($payments as $payment)
+                        <form action="/approve" method="POST">
+                            {{ csrf_field() }}
+                            <input type="hidden" name="bid" value="{{$payment->id}}">
+                            <tr>                        
+                                <td>{{$payment->bank->name}}</td>
+                                <td>R{{$payment->amount}}</td>
+                                <td>
+                                @if($payment->status == 101)
+                                    <button type="submit" class="btn btn-success btn-sm btn-round" onclick="confirm('Are you sure you received?')"><i class="material-icons">add_task</i> Received</button>
+                                
+                                @else
+                                    <button disabled class="btn btn-primary btn-sm btn-round"><i class="material-icons">schedule</i> Received</button>
+                                @endif                              
+                                </td>
+                            </tr> 
+                        <form
+                        @endforeach                     
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            @endif      
             <div class="alert alert-info alert-with-icon" data-notify="container">
                 <i class="material-icons" data-notify="icon">notifications</i>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <i class="material-icons">close</i>
                 </button>
                 <span data-notify="icon" class="now-ui-icons ui-1_bell-53"></span>
-                <span data-notify="message">Thank you for registering and Welcome to e-coince. Our auction is launching on the 20th of November 2020 and goes live at exactly 9am for our very first auction. Save this date and be part of the pioneering squad as we avail this money making machine. In the mean time be sure that your regi
-                    stration details are correct. Of great importance too , please do share out your referal link to friends and family do  they join also.</span>
+                <span data-notify="message">Thank you for registering and Welcome to E-COINCE. Our auction is launching on the 20th of November 2020 and goes live at exactly 9am for our very first auction. Save this date and be part of the pioneering squad as we avail this money making machine. In the mean time be sure that your registration details are correct. Of great importance too , please do share out your referral link to friends and family so  they join also.</span>
             </div>
             @if($is_open)
             <div class="alert alert-success alert-with-icon" data-notify="container">
