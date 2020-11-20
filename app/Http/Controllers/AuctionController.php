@@ -18,6 +18,7 @@ class AuctionController extends Controller
     public function index()
     {
         $auctions = 0;
+        $plans = 0;
         $is_open = Setting::find(1)->value('auction_status');
         if($is_open){            
             $auctions = Auction::where('status',1)->get();
