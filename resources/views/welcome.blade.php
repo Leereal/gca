@@ -57,6 +57,7 @@
             <!-- .nav-menu -->
 
             <a href="/register" class="get-started-btn scrollto">JOIN NOW</a>
+            <a href="/login" class="get-started-btn scrollto">LOGIN</a>
 
         </div>
     </header>
