@@ -51,7 +51,7 @@
                     <i class="material-icons">close</i>
                 </button>
                 <span data-notify="icon" class="now-ui-icons ui-1_bell-53"></span>
-                <span data-notify="message">Thank you for registering and Welcome to E-COINCE. Our auction is launching on the 20th of November 2020 and goes live at exactly 9am for our very first auction. Save this date and be part of the pioneering squad as we avail this money making machine. In the mean time be sure that your registration details are correct. Of great importance too , please do share out your referral link to friends and family so  they join also.</span>
+                <span data-notify="message">Thank you for registering and Welcome to E-COINCE. Please join telegram channel for discussion: <a href="https://t.me/ecoince">CLICK HERE TO JOIN</a></span>
             </div>
             @if($is_open)
             <div class="alert alert-success alert-with-icon" data-notify="container">
@@ -191,7 +191,7 @@
 
         window.onload = function () {
             // Set the date we're counting down to
-            var countDownDate = new Date("Nov 20, 2020 09:00:00").getTime();
+            var countDownDate = new Date(nextAuction()).getTime();
 
             // Update the count down every 1 second
             var x = setInterval(function() {
@@ -209,7 +209,7 @@
             var seconds = Math.floor((distance % (1000 * 60)) / 1000);
                 
             // Output the result in an element with id="demo"
-            document.getElementById("countdown").innerHTML = "NEXT AUCTION COMING IN :" + days + "days " + hours + "hr "
+            document.getElementById("countdown").innerHTML = "NEXT AUCTION COMING IN : " + hours + "hr "
             + minutes + "mins " + seconds + "sec ";
                 
             // If the count down is over, write some text 
