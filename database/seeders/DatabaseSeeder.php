@@ -20,9 +20,9 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([     
-            BankSeeder::class,
+            //BankSeeder::class,
             //PlanSeeder::class  
-            //AuctionSeeder::class           
+            AuctionSeeder::class           
         ]); 
         //User::factory(20)->create();
         // BankDetail::factory(20)->create(); 
