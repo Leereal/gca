@@ -21,7 +21,7 @@ class AuctionController extends Controller
         $plans = 0;
         $is_open = Setting::find(1)->value('auction_status');
         if($is_open){            
-            $auctions = Auction::where('status',1)->get();
+            $auctions = Auction::where('status',1)->inRandomOrder()->get();
             $plans = Plan::all();
         }
         return view('auction',['auctions'=>$auctions,'is_open'=>$is_open,'plans'=>$plans]);       
