@@ -52,7 +52,7 @@
                         <h6 class="card-category">{{$auction->bank_detail->bank->name}}</h6>
                         <div class="fileinput fileinput-new text-center" data-provides="fileinput">
                             <div class="fileinput-new thumbnail img-circle">
-                                <img src="../../images/stanbic.png" alt="...">
+                                <img src="{{ URL::to('/') }}/images/banks/{{$auction->bank_detail->bank->avatar}}" alt="...">
                             </div>                      
                         </div>
                         <h3 class="card-title">R{{$auction->balance}}</h3>

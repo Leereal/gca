@@ -21,7 +21,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([     
             BankSeeder::class,
-            PlanSeeder::class           
+            //PlanSeeder::class  
+            //AuctionSeeder::class           
         ]); 
         //User::factory(20)->create();
         // BankDetail::factory(20)->create(); 

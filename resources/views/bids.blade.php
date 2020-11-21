@@ -35,8 +35,8 @@
                       <ul>
                         <li>{{$bid->auction->bank_detail->bank->name}}</li>
                         <li>{{$bid->auction->bank_detail->account_number}}</li>
-                        <li>{{$bid->auction->bank_detail->account_holder}}</li>
-                        <li>{{$bid->auction->bank_detail->account_type}}</li>
+                        @if($bid->auction->bank_detail->account_holder)<li>{{$bid->auction->bank_detail->account_holder}}</li>@endif
+                        @if($bid->auction->bank_detail->account_type)<li>{{$bid->auction->bank_detail->account_type}}</li>@endif
                       </ul> 
                       <div class="fileinput fileinput-new text-center" data-provides="fileinput">
                         <div class="fileinput-new thumbnail">

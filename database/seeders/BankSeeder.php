@@ -18,10 +18,11 @@ class BankSeeder extends Seeder
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         // Truncate the table.
         DB::table('banks')->truncate();
-        // Bank::create(['name'=>'BITCOIN','avatar'=>'bitcoin.png']);
+        Bank::create(['name'=>'BITCOIN','avatar'=>'bitcoin.png']);
         // Bank::create(['name'=>'SKRILL','avatar'=>'skrill.png']);
         // Bank::create(['name'=>'NETELLER','avatar'=>'neteller.png']);
-        Bank::create(['name'=>'PERFECT MONEY','avatar'=>'perfect_money.png']);
+        // Bank::create(['name'=>'PERFECT MONEY','avatar'=>'perfect_money.png']);
+        Bank::create(['name'=>'EWALLET/CELLPHONE BANKING','avatar'=>'mobile_banking.png']);
         Bank::create(['name'=>'FNB (SOUTH AFRICA)','avatar'=>'fnb.png']);
         Bank::create(['name'=>'STANDARD BANK (SOUTH AFRICA)','avatar'=>'standard_bank.png']);
         Bank::create(['name'=>'NEDBANK (SOUTH AFRICA)','avatar'=>'nedbank.png']);
