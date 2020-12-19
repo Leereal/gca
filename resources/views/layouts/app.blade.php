@@ -5,18 +5,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'E-Coince') }}</title>
+        <title>{{ config('app.name', 'Golden Coin Auction') }}</title>
 
           <!--  Social tags      -->
-        <meta name="keywords" content="Online Auction, ECoince, E-coince, Make Money Online, Bid Auction, Hyip, Investment, Invest, Bitcoin">
-        <meta name="description" content="E-COINCE is an online peer to peer platform in which members buy and sell their virtual currency called COINS , 1 COIN is equivalent to 1ZAR.">
+        <meta name="keywords" content="Online Auction, Golden Coin Auction, Golden Coin Auction, Make Money Online, Bid Auction, Hyip, Investment, Invest, Bitcoin">
+        <meta name="description" content="Golden Coin Auction is an online peer to peer platform in which members buy and sell their virtual currency called COINS , 1 COIN is equivalent to 1ZAR.">
         <!-- Twitter Card data -->
         <meta name="twitter:card" content="investment">
-        <meta name="twitter:site" content="@ecoince">
-        <meta name="twitter:title" content="ECoince">
-        <meta name="twitter:description" content="E-COINCE is an online peer to peer platform in which members buy and sell their virtual currency called COINS , 1 COIN is equivalent to 1ZAR.">
-        <meta name="twitter:creator" content="e-coince">
-        <meta name="twitter:image" content="https:e-coince.com"> 
+        <meta name="twitter:site" content="@goldencoinauction">
+        <meta name="twitter:title" content="Golden Coin Auction">
+        <meta name="twitter:description" content="Golden Coin Auction is an online peer to peer platform in which members buy and sell their virtual currency called COINS , 1 COIN is equivalent to 1ZAR.">
+        <meta name="twitter:creator" content="Golden Coin Auction">
+        <meta name="twitter:image" content="https:goldencoinauction.bid"> 
         <!--     Fonts and icons     -->
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
@@ -42,11 +42,11 @@
             Tip 2: you can also add an image using data-image tag
         -->
                 <div class="logo">
-                    <a href="https://e-coince.com" class="simple-text logo-mini">
+                    <a href="https://goldencoinauction.bid" class="simple-text logo-mini">
                         <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
                     </a>
-                    <a href="https://e-coince.com" class="simple-text logo-normal">
-                        E-COINCE
+                    <a href="https://goldencoinauction.bid" class="simple-text logo-normal">
+                        GCA
                     </a>
                 </div>
                 <div class="sidebar-wrapper">
@@ -201,7 +201,7 @@
                             &copy;
                             <script>
                                 document.write(new Date().getFullYear())
-                            </script>, made with <i class="material-icons">favorite</i> by E-COINCE
+                            </script>, made with <i class="material-icons">favorite</i> by Golden Coin Auction
                         </div>
                     </div>
                 </footer>

@@ -53,8 +53,8 @@ class BidsController extends Controller
             'plan'                => 'required|integer',
         ]);
         $user = auth()->user();      
-        $min_amount = 250;
-        $max_amount = 15000;
+        $min_amount = 100;
+        $max_amount = 10000;
         
         $auction= Auction::where('id',$request->auction)->first();
         $auction_balance = $auction->balance;

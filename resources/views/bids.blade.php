@@ -31,7 +31,7 @@
                   <form action="/make-payment" method="POST" enctype="multipart/form-data">
                       {{ csrf_field() }}  
                   <input type="hidden" name="bid" value="{{$bid->id}}">                    
-                      <h3 class="card-title">R{{$bid->amount}}</h3>                    
+                      <h3 class="card-title">P{{$bid->amount}}</h3>                    
                       <ul>
                         <li>{{$bid->auction->bank_detail->bank->name}}</li>
                         <li>{{$bid->auction->bank_detail->account_number}}</li>

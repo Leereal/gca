@@ -55,7 +55,7 @@
                                 <img src="{{ URL::to('/') }}/images/banks/{{$auction->bank_detail->bank->avatar}}" alt="...">
                             </div>                      
                         </div>
-                        <h3 class="card-title">R{{$auction->balance}}</h3>
+                        <h3 class="card-title">P{{$auction->balance}}</h3>
                         @foreach($plans as $plan)
                         <div class="form-check">
                             <label class="form-check-label">

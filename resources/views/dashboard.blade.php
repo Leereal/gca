@@ -51,7 +51,7 @@
                     <i class="material-icons">close</i>
                 </button>
                 <span data-notify="icon" class="now-ui-icons ui-1_bell-53"></span>
-                <span data-notify="message">Thank you for registering and Welcome to E-COINCE. Please join telegram channel for discussion: <a href="https://t.me/ecoince">CLICK HERE TO JOIN</a></span>
+                <span data-notify="message">Thank you for registering and Welcome to Golden Auction Coin. Please join telegram channel for discussion: <a href="https://t.me/goldencoinauction">CLICK HERE TO JOIN</a></span>
             </div>
             @if($is_open)
             <div class="alert alert-success alert-with-icon" data-notify="container">
@@ -82,7 +82,7 @@
                         <i class="material-icons">copyright</i>
                     </div>
                     <p class="card-category">Balance</p>
-                    <h5 class="card-title">R{{$balance}}</h5>
+                    <h5 class="card-title">P{{$balance}}</h5>
                 </div>
                 <div class="card-footer">
                     <div class="stats">
@@ -99,7 +99,7 @@
                         <i class="material-icons">card_giftcard</i>
                     </div>
                     <p class="card-category">Ready for Sale</p>
-                    <h5 class="card-title">R{{$mature}}</h5>
+                    <h5 class="card-title">P{{$mature}}</h5>
                 </div>
                 <div class="card-footer">
                     <div class="stats">
@@ -115,7 +115,7 @@
                         <i class="material-icons">exit_to_app</i>
                     </div>
                     <p class="card-category">Bonus</p>
-                    <h5 class="card-title">R{{$bonus}}</h5>
+                    <h5 class="card-title">P{{$bonus}}</h5>
                 </div>
                 <div class="card-footer">
                     <div class="stats">

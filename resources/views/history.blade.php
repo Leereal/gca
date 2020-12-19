@@ -44,7 +44,7 @@
                           @foreach($investments as $investment) 
                           <tr>
                             <td>{{$investment->created_at}}</td> 
-                            <td>{{$investment->amount}}</td>
+                            <td>P{{$investment->amount}}</td>
                             <td>{{$investment->plan->name}}</td>
                             <td>{{$investment->due_date}}</td>
                             <td>{{$investment->bank->name}}</td>             
@@ -66,7 +66,7 @@
                           @foreach($bids as $bid) 
                           <tr>
                             <td>{{$bid->created_at}}</td> 
-                            <td>{{$bid->amount}}</td>
+                            <td>P{{$bid->amount}}</td>
                             <td>{{$bid->bank->name}}</td>
                             <td>{{$bid->plan->name}}</td>
                             {{-- <td>{{$bid->status}}</td>              --}}
@@ -87,8 +87,8 @@
                           @foreach($bonuses as $bonus) 
                           <tr>
                             <td>{{$bonus->created_at}}</td> 
-                            <td>{{$bonus->amount}}</td>
-                            <td>{{$bonus->investment->amount}}</td>
+                            <td>P{{$bonus->amount}}</td>
+                            <td>P{{$bonus->investment->amount}}</td>
                             {{-- <td>{{$bonus->status}}</td>              --}}
                           </tr>
                           @endforeach  
@@ -108,9 +108,9 @@
                       @foreach($auctions as $auction) 
                       <tr>
                         <td>{{$auction->created_at}}</td> 
-                        <td>{{$auction->amount}}</td>
+                        <td>P{{$auction->amount}}</td>
                         <td>{{$auction->bank->name}}</td>
-                        <td>{{$auction->investment->amount}}</td>
+                        <td>P{{$auction->investment->amount}}</td>
                         {{-- <td>{{$auction->status}}</td>              --}}
                       </tr>
                       @endforeach  

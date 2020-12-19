@@ -5,20 +5,20 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>E-COINCE</title>
+    <title>Golden Coin Auction</title>
      <!--  Social tags      -->
-     <meta name="keywords" content="Online Auction, ECoince, E-coince, Make Money Online, Bid Auction, Hyip, Investment, Invest, Bitcoin">
-     <meta name="description" content="E-COINCE is an online peer to peer platform in which members buy and sell their virtual currency called COINS , 1 COIN is equivalent to 1ZAR.">
+     <meta name="keywords" content="Online Auction, Golden Auction Coin, Make Money Online, Bid Auction, Hyip, Investment, Invest, Bitcoin">
+     <meta name="description" content="Golden Auction Coin is an online peer to peer platform in which members buy and sell their virtual currency called COINS , 1 COIN is equivalent to 1 PULA.">
      <!-- Twitter Card data -->
      <meta name="twitter:card" content="investment">
-     <meta name="twitter:site" content="@ecoince">
-     <meta name="twitter:title" content="ECoince">
-     <meta name="twitter:description" content="E-COINCE is an online peer to peer platform in which members buy and sell their virtual currency called COINS , 1 COIN is equivalent to 1ZAR.">
-     <meta name="twitter:creator" content="e-coince">
-     <meta name="twitter:image" content="https:e-coince.com">
+     <meta name="twitter:site" content="@goldencoinauction">
+     <meta name="twitter:title" content="Golden Coin Auction">
+     <meta name="twitter:description" content="Golden Auction Coin is an online peer to peer platform in which members buy and sell their virtual currency called COINS , 1 COIN is equivalent to 1 PULA.">
+     <meta name="twitter:creator" content="Golden Auction Coin">
+     <meta name="twitter:image" content="https://goldencoinauction.bid">
 
     <!-- Favicons -->
-    <link href="{{asset('assets/favicon.png')}}" rel="icon">
+    <link href="{{asset('favicon.ico')}}" rel="icon">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
@@ -42,7 +42,7 @@
         <div class="container d-flex align-items-center">
 
             <h1 class="logo mr-auto">
-                <a href="/"><img src="home-assets/img/color-logo.png" width="150" alt=""></a>
+                <a href="/"><img src="home-assets/img/logo.png" width="200" alt=""></a>
             </h1>
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="index.html" class="logo mr-auto"><img src="home-assets/img/logo.png" alt="" class="img-fluid"></a>-->
@@ -96,12 +96,12 @@
                 <div class="row content">
                     <div class="col-lg-6">
                         <p>
-                            E-COINCE is the latest and fast growing online platform that enables you to participate in a virtual auction where you can bid and buy virtual coins online, sale them and make a small fortune in either 4 days, 10 days or 15days.
+                            Golden Coin Auction is the latest and fast growing online platform that enables you to participate in a virtual auction where you can bid and buy virtual coins online, sale them and make a small fortune in either 1 day, 2 days or 5 days.
                         </p>
                         <ul>
-                            <li><i class="ri-check-double-line"></i> Minimum Bid amount is R250 and maximum bid amount is R15 000.</li>
+                            <li><i class="ri-check-double-line"></i> Minimum Bid amount is P100 and maximum bid amount is P1000.</li>
                             <li><i class="ri-check-double-line"></i> Auction Times: 09:00 am and 19:00 pm</li>
-                            <li><i class="ri-check-double-line"></i> 40% in 4 days, 120% in 10 days and 200% in 15 days</li>
+                            <li><i class="ri-check-double-line"></i> 50% in 1 day, 100% in 2 days and 250% in 5 days</li>
                         </ul>
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0">
@@ -227,7 +227,7 @@
                 <div class="row">
                     <div class="col-lg-9 text-center text-lg-left">
                         <h3>Register Today</h3>
-                        <p> Join more than 5 000 members and be the first to make money before the festive season. Change your lifestyle with E-COINCE</p>
+                        <p> Join more than 5 000 members and be the first to make money before the festive season. Change your lifestyle with Golden Coin Auction</p>
                     </div>
                     <div class="col-lg-3 cta-btn-container text-center">
                         <a class="cta-btn align-middle" href="/register">REGISTER NOW</a>
@@ -250,24 +250,24 @@
 
                     <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                         <div class="box">
-                            <h3>Starter Plan</h3>
-                            <h4>40<sup>%</sup><span>in 4 days</span></h4>
+                            <h3>One day  Plan</h3>
+                            <h4>50<sup>%</sup><span>in 1 day</span></h4>
                             <a href="/register" class="buy-btn">JOIN NOW</a>
                         </div>
                     </div>
 
                     <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="200">
                         <div class="box featured">
-                            <h3>General Plan</h3>
-                            <h4>120<sup>%</sup><span>in 10 days</span></h4>
+                            <h3>Two Days Plan</h3>
+                            <h4>100<sup>%</sup><span>in 2 days</span></h4>
                             <a href="/register" class="buy-btn">JOIN NOW</a>
                         </div>
                     </div>
 
                     <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="300">
                         <div class="box">
-                            <h3>Pro Plan</h3>
-                            <h4>200<sup>%</sup><span>in 15 days</span></h4>
+                            <h3>Five days Plan</h3>
+                            <h4>250<sup>%</sup><span>in 5 days</span></h4>
                             <a href="/register" class="buy-btn">JOIN NOW</a>
                         </div>
                     </div>
@@ -284,7 +284,7 @@
     <footer id="footer">
         <div class="container footer-bottom clearfix">
             <div class="copyright">
-                &copy; Copyright <strong><span>E-COINCE</span></strong>. All Rights Reserved
+                &copy; Copyright <strong><span>Golden Coin Auction</span></strong>. All Rights Reserved
             </div>
         </div>
     </footer>

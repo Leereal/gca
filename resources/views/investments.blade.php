@@ -23,7 +23,7 @@
                   @foreach($investments as $investment) 
                   <tr>
                     <td>{{$investment->created_at}}</td> 
-                    <td>{{$investment->amount}}</td>
+                    <td>P{{$investment->amount}}</td>
                     <td>{{$investment->plan->name}}</td>
                     <td>{{$investment->due_date}}</td>
                     <td>{{$investment->bank->name}}</td>
