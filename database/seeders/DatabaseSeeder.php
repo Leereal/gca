@@ -24,11 +24,11 @@ class DatabaseSeeder extends Seeder
             PlanSeeder::class,  
             //AuctionSeeder::class           
         ]); 
-        User::factory(20)->create();
-        BankDetail::factory(20)->create(); 
-        Investment::factory(60)->create();   
-        Auction::factory(20)->create(); 
-        Bids::factory(50)->create();
-        Bonus::factory(50)->create();
+        //User::factory(20)->create();
+        //BankDetail::factory(20)->create(); 
+        //Investment::factory(60)->create();   
+        //Auction::factory(20)->create(); 
+        //Bids::factory(50)->create();
+        //Bonus::factory(50)->create();
     }
 }
