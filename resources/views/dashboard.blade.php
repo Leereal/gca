@@ -191,8 +191,8 @@
 
         window.onload = function () {
             // Set the date we're counting down to
-            var countDownDate = '20-12-2020 09:00:00'.getTime();
-            //var countDownDate = new Date(nextAuction()).getTime();//Use this for live
+            
+            var countDownDate = new Date(nextAuction()).getTime();//Use this for live
 
             // Update the count down every 1 second
             var x = setInterval(function() {
