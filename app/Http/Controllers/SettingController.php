@@ -2,84 +2,53 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Auction;
+use App\Models\Investment;
 use App\Models\Setting;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SettingController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function open_auction()
     {
-        //
+        $this->mature_investments();
+        //Select All Market Place orders which are pending and set status to 1
+        Auction::where('status', 2)->update(['status' => 1]);
+        //Set open market to status 1        
+        return Setting::findOrFail(1)->update(['auction_status' => 1]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function close_auction()
     {
-        //
+        return Setting::findOrFail(1)->update(['auction_status' => 0]);
+    }  
+
+    public function mature_investments()
+    {
+        //Select All Investments with Due date passed and status 101 set to status 1
+        $matured = Investment::where('due_date','<=', now())->where('status', 101);
+        $this->put_on_auction($matured->get());
+        return $matured->update(['status' => 0,'balance'=>0]);  
+    }
+    protected function put_on_auction($investments){
+        try {
+            DB::beginTransaction();
+            foreach ($investments as $investment) {
+                $auction = new Auction();
+                $auction->amount            = $investment->balance;
+                $auction->balance           = $investment->balance;
+                $auction->bank_detail_id    = ($investment->user->bank_details->first())->id ?? "";
+                $auction->investment_id     = $investment->id;
+                $auction->user_id           = $investment->user_id;
+                $auction->ipaddress         = request()->ip();
+                $auction->save();                
+            }
+            DB::beginTransaction();        
+        }catch (\Exception $e) {
+            DB::rollback();
+            throw $e;
+        }             
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Setting  $setting
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Setting $setting)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Setting  $setting
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Setting $setting)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Setting  $setting
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Setting $setting)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Setting  $setting
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Setting $setting)
-    {
-        //
-    }
 }

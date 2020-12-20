@@ -91,5 +91,5 @@ class AuctionController extends Controller
     public function destroy(Auction $auction)
     {
         //
-    }
+    }   
 }

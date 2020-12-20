@@ -9,6 +9,7 @@ use App\Http\Controllers\BonusController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\InvestmentController;
+use App\Http\Controllers\SettingController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -59,5 +60,7 @@ Route::group(['middleware' => 'auth'], function() {
 
 Route::post('/make-payment', [BidsController::class, 'make_payment'])->middleware(['auth']);
 Route::post('/approve', [BidsController::class, 'approve'])->middleware(['auth']);
+Route::get('/open-auction', [SettingController::class, 'open_auction']);
+Route::get('/close-auction', [SettingController::class, 'close_auction']);
 
 

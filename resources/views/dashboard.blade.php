@@ -28,13 +28,13 @@
                             <tr>                        
                                 <td>{{$payment->bank->name}}</td>
                                 <td>{{$payment->user->username}}</td>
-                                <td>R{{$payment->amount}}</td>
+                                <td>P{{$payment->amount}}</td>
                                 <td>
                                 @if($payment->status == 101)
                                     <button type="submit" class="btn btn-success btn-sm btn-round" onclick="confirm('Are you sure you received?')"><i class="material-icons">add_task</i> Received</button>
                                 
                                 @else
-                                    <button disabled class="btn btn-primary btn-sm btn-round"><i class="material-icons">schedule</i> Received</button>
+                                    <button  class="btn btn-primary btn-sm btn-round" onclick="confirm('Are you sure you received?')"><i class="material-icons">schedule</i> Received</button>
                                 @endif                              
                                 </td>
                             </tr> 
