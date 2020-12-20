@@ -9,9 +9,6 @@
                     </span>
                 </div><!-- /input-group -->   
             </div>
-            <div>
-                <img src="{{ URL::to('/') }}/images/banks/fnb.png" alt="">
-            </div>
             @if(!$payments->isEmpty())
             <div class="col-lg-6 col-md-12">
                 <div class="card">
