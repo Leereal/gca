@@ -22,8 +22,8 @@ class BonusFactory extends Factory {
     public function definition() {
         return [
             'amount' => $this->faker->randomFloat( 2, 15, 3000 ),
-            'user_id' => mt_rand( 1, 20 ),
-            'investment_id' => mt_rand( 1, 20 ),
+            'user_id' => mt_rand( 1, 10 ),
+            'investment_id' => mt_rand( 1, 3 ),
         ];
 
     }

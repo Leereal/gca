@@ -26,9 +26,9 @@ class InvestmentFactory extends Factory {
             'expected_profit'=>$this->faker->randomFloat( 2, 10, 3000 ),
             'balance' => $this->faker->randomFloat( 2, 15, 3000 ),
             'plan_id' => mt_rand( 1, 3),
-            'user_id' => mt_rand( 1, 20 ),
+            'user_id' => mt_rand( 1, 10 ),
             'due_date' => $this->faker->dateTimeBetween( '-1 months', '+1 months' ),
-            'bank_id' => mt_rand( 1, 7 ),
+            'bank_id' => mt_rand( 1, 3 ),
             'ipaddress'=>$this->faker->ipv4,
         ];
     }

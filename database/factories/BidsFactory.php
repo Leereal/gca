@@ -23,9 +23,9 @@ class BidsFactory extends Factory {
         return [
             'amount' => $this->faker->randomFloat( 2, 10, 3000 ),      
             'auction_id' => mt_rand( 1, 10 ),
-            'bank_id' => mt_rand( 1, 4 ),
+            'bank_id' => mt_rand( 1, 3 ),
             'plan_id' => mt_rand( 1, 3 ),
-            'user_id' => mt_rand( 1, 20 ),
+            'user_id' => mt_rand( 1, 10 ),
             'expiration_time' => $this->faker->dateTimeBetween( 'now', '+2 days' ),
             'comment' =>$this->faker->text(),
             'ipaddress'=>$this->faker->ipv4,

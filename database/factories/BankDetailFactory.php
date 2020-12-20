@@ -22,8 +22,8 @@ class BankDetailFactory extends Factory
     public function definition()
     {
         return [
-            'user_id' => mt_rand(1,20),
-            'bank_id' => mt_rand(1,7),
+            'user_id' => mt_rand(1,10),
+            'bank_id' => mt_rand(1,3),
             'account_number' => mt_rand(100000,999999),      
             'ipAddress'=>$this->faker->ipv4, 
         ];

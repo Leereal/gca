@@ -22,13 +22,13 @@ class DatabaseSeeder extends Seeder
         $this->call([     
             BankSeeder::class,
             PlanSeeder::class,  
-            //AuctionSeeder::class           
+            AuctionSeeder::class           
         ]); 
-        //User::factory(20)->create();
-        //BankDetail::factory(20)->create(); 
-        //Investment::factory(60)->create();   
+        User::factory(10)->create();
+        BankDetail::factory(15)->create(); 
+        Investment::factory(3)->create();   
         //Auction::factory(20)->create(); 
-        //Bids::factory(50)->create();
-        //Bonus::factory(50)->create();
+        Bids::factory(20)->create();
+        Bonus::factory(20)->create();
     }
 }

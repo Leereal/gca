@@ -9,6 +9,9 @@
                     </span>
                 </div><!-- /input-group -->   
             </div>
+            <div>
+                <img src="{{ URL::to('/') }}/images/banks/fnb.png" alt="">
+            </div>
             @if(!$payments->isEmpty())
             <div class="col-lg-6 col-md-12">
                 <div class="card">
@@ -27,6 +30,7 @@
                             <input type="hidden" name="bid" value="{{$payment->id}}">
                             <tr>                        
                                 <td>{{$payment->bank->name}}</td>
+                                <td>{{$payment->user->username}}</td>
                                 <td>R{{$payment->amount}}</td>
                                 <td>
                                 @if($payment->status == 101)
